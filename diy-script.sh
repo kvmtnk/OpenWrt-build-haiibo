@@ -9,6 +9,9 @@
 # TTYD 免登录
  sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
+# 增加其他源
+ sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+
 # 移除要替换的包
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/msd_lite
